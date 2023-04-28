@@ -5,7 +5,14 @@ on:
     branches:
       - main
 
-  workflow_dispatch: # Allow manual triggering of workflow
+  workflow_dispatch:
+     inputs:
+      COMPANY_NAME:
+        description: 'Name of the company'     
+        required: true
+      GAME:
+        description: 'Game name'  
+        required: true
 
 jobs:
   build:
@@ -13,12 +20,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
-      - name: Run Cypress tests with recording
+      - name: Run Cypress tests
         uses: cypress-io/github-action@v5
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
