@@ -1,0 +1,15 @@
+{
+  "name": "dashboard-validator",
+  "version": "1.0.0",
+  "description": "Validate client dashboard",
+  "main": "index.js",
+  "scripts": {
+    "open": "cypress open",
+    "test": "tests"
+  },
+  "author": "Solsten.io",
+  "license": "ISC",
+  "dependencies": {
+    "cypress": "^12.11.0"
+  }
+}
