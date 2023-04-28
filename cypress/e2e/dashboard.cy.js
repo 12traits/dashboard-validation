@@ -2,14 +2,14 @@ const login = (name) => {
   cy.session(name, () => {
     cy.request({
       method: 'POST',
-      url: `${Cypress.env('gateway')}/users/v2/auth/login`,
+      url: `${Cypress.env('GATEWAY')}/users/v2/auth/login`,
       headers: {
         authority: 'gateway.solsten.io',
         accept: '*/*',
         authorization: 'Bearer',
         'content-type': 'application/json',
-        origin: 'https://supercell.solsten.io',
-        referer: 'https://supercell.solsten.io/',
+        origin: `https://${Cypress.env('COMPANY_NAME')}.solsten.io`,
+        referer: `https://${Cypress.env('COMPANY_NAME')}.solsten.io`,
         scheme: 'https',
       },
       body: {
@@ -35,7 +35,7 @@ describe('Dashboard', () => {
   it('Get authentificated user detials', () => {
     cy.request({
       method: 'GET',
-      url: `${Cypress.env('gateway')}/users/v1/me`,
+      url: `${Cypress.env('GATEWAY')}/users/v1/me`,
       headers: {
         authorization: `Bearer ${window.localStorage.getItem('accessToken')}`,
         accept: 'application/json',
