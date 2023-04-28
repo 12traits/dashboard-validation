@@ -33,7 +33,7 @@ jobs:
           CYPRESS_COMPANY_NAME: ${{ github.event.inputs.COMPANY_NAME }}
           CYPRESS_GAME: ${{ github.event.inputs.GAME }}
         with:
-          command: npx cypress run
+          command: npx cypress run --record false
           record: false
           browser: electron
           
