@@ -10,6 +10,7 @@
   "author": "Solsten.io",
   "license": "ISC",
   "dependencies": {
-    "cypress": "^12.11.0"
+    "cypress": "^12.11.0",
+    "cypress-localstorage-commands": "^2.2.3"
   }
 }
